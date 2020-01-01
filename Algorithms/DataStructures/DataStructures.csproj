@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Graphs\" />
+    <Folder Include="Arrays\" />
+    <Folder Include="LinkedLists\DoubleLinked\" />
+    <Folder Include="LinkedLists\CircularLinked\" />
+    <Folder Include="Queues\" />
+    <Folder Include="Stacks\" />
+    <Folder Include="Trees\" />
+  </ItemGroup>
+
+</Project>
