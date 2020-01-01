@@ -66,5 +66,30 @@ namespace UnitTests.LinkedListTests.SingleLinkedListTests
 
             Assert.IsNull(singleLinkedList.Root);
         }
+
+        [Test]
+        public void GetMiddleNodeTest()
+        {
+            var singleLinkedList = new SingleLinkedList(1);
+
+            singleLinkedList.AddToEnd(2);
+            singleLinkedList.AddToEnd(3);
+            singleLinkedList.AddToEnd(4);
+            singleLinkedList.AddToEnd(5);
+
+            Assert.AreEqual(3, singleLinkedList.GetMiddleNode().Value);
+
+            singleLinkedList = new SingleLinkedList(1);
+            Assert.AreEqual(1, singleLinkedList.GetMiddleNode().Value);
+
+            singleLinkedList = new SingleLinkedList(1);
+            singleLinkedList.AddToEnd(2);
+            Assert.AreEqual(2, singleLinkedList.GetMiddleNode().Value);
+
+            singleLinkedList = new SingleLinkedList(1);
+            singleLinkedList.AddToEnd(2);
+            singleLinkedList.AddToEnd(3);
+            Assert.AreEqual(2, singleLinkedList.GetMiddleNode().Value);
+        }
     }
 }

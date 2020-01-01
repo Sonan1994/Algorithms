@@ -33,6 +33,26 @@ namespace DataStructures.LinkedLists.SingleLinked
 
         #region Methods
 
+        /// <summary>
+        /// Find middle node in single linked list.
+        /// Example: 1 -> 2 -> 3 -> 4 return 3
+        /// Example: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 return 4
+        /// </summary>
+        /// <returns></returns>
+        public SingleLinkedListNode GetMiddleNode()
+        {
+            SingleLinkedListNode slowerPointer = _root;
+            SingleLinkedListNode fasterPointer = _root;
+
+            while (fasterPointer != null && fasterPointer.Next != null)
+            {
+                fasterPointer = fasterPointer.Next.Next;
+                slowerPointer = slowerPointer.Next;
+            }
+
+            return slowerPointer;
+        }
+
         public void AddToEnd(int value)
         {
             SingleLinkedListNode tmpRoot = _root;
@@ -49,6 +69,12 @@ namespace DataStructures.LinkedLists.SingleLinked
 
             newNode.Next = _root;
             _root = newNode;
+        }
+
+        public void RemoveAll()
+        {
+            while (_root != null)
+                RemoveNodeAt(0);
         }
 
         public bool RemoveNodeAt(int index)
