@@ -51,6 +51,31 @@ namespace DataStructures.LinkedLists.SingleLinked
             _root = newNode;
         }
 
+        public bool RemoveNodeAt(int index)
+        {
+            SingleLinkedListNode currentNode = _root;
+            SingleLinkedListNode previousNode = null;
+
+            if (index == 0)
+            {
+                _root = _root.Next;
+                return true;
+            }
+            
+            while (index > 0 && currentNode.Next != null)
+            {
+                previousNode = currentNode;
+                currentNode = currentNode.Next;
+                index--;
+            }
+       
+            if (index != 0)
+                return false;
+
+            previousNode.Next = currentNode.Next;
+            return true;
+        }
+
         public override string ToString()
         {
             return GetStringRepresentation(_root);
